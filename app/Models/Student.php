@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Student extends Model
+{
+    /** @use HasFactory<\Database\Factories\StudentFactory> */
+    use HasFactory;
+
+    protected $with = ['classroom'];
+
+    protected $fillable = ['classroom_id', 'name', 'nis', 'address'];
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class, 'classroom_id');
+    }
+
+}
