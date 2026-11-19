@@ -6,6 +6,8 @@ it('renders the teacher list and sidebar menu', function () {
     $response
         ->assertOk()
         ->assertSee('Daftar Teacher')
+        ->assertSee(route('admin.teacher.create'))
+        ->assertSee('Tambah Data')
         ->assertSee('Name')
         ->assertSee('NIP')
         ->assertSee('Subject')

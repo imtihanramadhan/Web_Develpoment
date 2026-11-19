@@ -12,6 +12,8 @@ it('renders all seeded classrooms in the classroom table', function () {
 
     $response
         ->assertSee('Daftar Classroom')
+        ->assertSee(route('admin.classroom.create'))
+        ->assertSee('Tambah Data')
         ->assertSee('Name')
         ->assertSee('Major')
         ->assertSee('X PPLG 1')
